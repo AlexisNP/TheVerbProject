@@ -1,3 +1,17 @@
 <resources>
+    <!-- GLOBAL STRINGS -->
     <string name="app_name">The Verb Project</string>
+    <string name="search_placeholder">Search</string>
+    <string-array name="app_nav_bottom">
+        <item>Search</item>
+        <item>My collections</item>
+        <item>Profile</item>
+    </string-array>
+
+    <!-- ICONS -->
+    <string name="icons_title">Icons</string>
+
+    <!-- COLLECTIONS -->
+    <string name="collections_title">Collections</string>
+
 </resources>
