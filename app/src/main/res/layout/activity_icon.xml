@@ -7,7 +7,7 @@
     tools:context=".activities.IconActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/cl_icon_infos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constrainedHeight="false"
@@ -45,7 +45,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:id="@+id/view"
+            android:id="@+id/border_bottom"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginTop="8dp"
@@ -58,26 +58,85 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="144dp"
+        android:id="@+id/cl_icon_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="86dp"
+        app:layout_constraintBottom_toTopOf="@+id/guide_middle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/cl_icon_infos">
 
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/googleg_disabled_color_18" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/button"
-        style="@style/primary_btn"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide_middle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="478dp"
+        app:layout_constraintGuide_percent="0.6" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_icon_actions"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/cl_icon_view">
+
+        <SeekBar
+            android:id="@+id/sb_image_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:orientation="horizontal"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sb_image_size">
+
+            <Button
+                android:id="@+id/btn_icon_download"
+                style="@style/primary_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:text="@string/btn_download_icon" />
+
+            <Button
+                android:id="@+id/btn_icon_favorite"
+                style="@style/tertiary_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:text="@string/btn_save_to_favorites" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
