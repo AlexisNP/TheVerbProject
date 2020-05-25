@@ -1,8 +1,10 @@
-package fr.mds.theverbproject;
+package fr.mds.theverbproject.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import fr.mds.theverbproject.R;
 
 public class ProfileActivity extends AppCompatActivity {
 

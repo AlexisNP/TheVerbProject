@@ -8,6 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 import fr.mds.theverbproject.R;
+import fr.mds.theverbproject.activities.CollectionActivity;
+import fr.mds.theverbproject.activities.CollectionsActivity;
+import fr.mds.theverbproject.activities.IconActivity;
+import fr.mds.theverbproject.activities.IconsActivity;
+import fr.mds.theverbproject.activities.ProfileActivity;
 
 public class MainActivity extends AppCompatActivity {
 
