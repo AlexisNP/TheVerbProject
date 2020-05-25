@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "639217290046",
+    "firebase_url": "https://theverbproject-df1d1.firebaseio.com",
+    "project_id": "theverbproject-df1d1",
+    "storage_bucket": "theverbproject-df1d1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639217290046:android:cbce9f3682a38b7e213a6f",
+        "android_client_info": {
+          "package_name": "fr.mds.theverbproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639217290046-ub3m94okce5e7i6rakv8phupfo1u9f9t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfZtRI4y3O01ievBegkP-Y8MqvHZseRC4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "639217290046-ub3m94okce5e7i6rakv8phupfo1u9f9t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
