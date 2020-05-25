@@ -1,4 +1,4 @@
-package com.example.theverbproject;
+package fr.mds.theverbproject;
 
 import org.junit.Test;
 

@@ -1,8 +1,10 @@
-package com.example.theverbproject;
+package fr.mds.theverbproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import fr.mds.theverbproject.R;
 
 public class MainActivity extends AppCompatActivity {
 
