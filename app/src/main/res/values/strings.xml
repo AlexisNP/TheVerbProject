@@ -11,6 +11,10 @@
     <!-- ICONS -->
     <string name="icons_title">Icons</string>
 
+    <!-- ICON SINGLE -->
+    <string name="btn_save_to_favorites">Save to Favorites</string>
+    <string name="btn_download_icon">Get this icon</string>
+
     <!-- COLLECTIONS -->
     <string name="collections_title">Collections</string>
 
