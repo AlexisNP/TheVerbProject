@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="fr.mds.theverbproject.MainActivity">
+        <activity android:name=".CollectionActivity"></activity>
+        <activity android:name=".IconActivity" />
+        <activity android:name=".CollectionsActivity" />
+        <activity android:name=".IconsActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
