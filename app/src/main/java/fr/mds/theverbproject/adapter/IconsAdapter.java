@@ -37,11 +37,7 @@ public class IconsAdapter extends RecyclerView.Adapter<IconViewHolder> {
 
     @Override
     public int getItemCount() {
-//        if (iconList == null) {
-//            return -1;
-//        } else {
-            return this.iconList.size();
-//        }
+        return this.iconList.size();
     }
 
     @Override

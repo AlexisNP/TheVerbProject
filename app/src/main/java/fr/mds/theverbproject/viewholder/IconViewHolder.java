@@ -31,7 +31,7 @@ public class IconViewHolder extends RecyclerView.ViewHolder {
     public void bind(final Icon icon, final IconClickListener iconClickListener) {
         mIconCard.setLayoutParams(new ViewGroup.LayoutParams(getScreenWidth()/2, getMeasuredPosterHeight(getScreenWidth()/2)));
 
-        Picasso.with(mIconPoster.getContext()).load(iconImagePathBuilder(icon.getPermalink())).placeholder(R.drawable.placeholder).fit().centerCrop().into(mIconPoster);
+        Picasso.with(mIconPoster.getContext()).load(iconImagePathBuilder(icon.getId())).placeholder(R.drawable.placeholder).fit().centerCrop().into(mIconPoster);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -22,8 +22,7 @@ import butterknife.OnClick;
 import fr.mds.theverbproject.R;
 import fr.mds.theverbproject.adapter.IconsAdapter;
 import fr.mds.theverbproject.model.Icon;
-import fr.mds.theverbproject.model.IconPageResult;
-import fr.mds.theverbproject.utils.EndlessRecyclerViewScrollListener;
+import fr.mds.theverbproject.model.ResponseResult;
 import fr.mds.theverbproject.utils.GetIconDataService;
 import fr.mds.theverbproject.utils.IconClickListener;
 import fr.mds.theverbproject.utils.RetrofitInstance;
@@ -35,9 +34,7 @@ public class IconsActivity extends AppCompatActivity {
 
     private static final int FIRST_PAGE = 1;
     private static final String TAG = "iconsActivity";
-    private int totalPages;
-    private int currentSortMode = 1;
-    private Call<IconPageResult> call;
+    private Call<ResponseResult> call;
     private List<Icon> iconsResults;
     private IconsAdapter iconsAdapter;
 
@@ -64,16 +61,6 @@ public class IconsActivity extends AppCompatActivity {
             }
         });
         recyclerView.setLayoutManager(manager);
-        EndlessRecyclerViewScrollListener scrollListener = new EndlessRecyclerViewScrollListener(manager) {
-            @Override
-            public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                if ((page + 1) <= totalPages && currentSortMode != 3) {
-                    loadPage(page + 1);
-                }
-            }
-        };
-
-        recyclerView.addOnScrollListener(scrollListener);
 
         loadPage(FIRST_PAGE);
     }
@@ -83,16 +70,13 @@ public class IconsActivity extends AppCompatActivity {
 
         call = iconDataService.getIconsByTerm("zombie");
 
-        call.enqueue(new Callback<IconPageResult>() {
+        call.enqueue(new Callback<ResponseResult>() {
             @Override
-            public void onResponse(@NonNull Call<IconPageResult> call, @NonNull Response<IconPageResult> response) {
+            public void onResponse(@NonNull Call<ResponseResult> call, @NonNull Response<ResponseResult> response) {
 
                 if(page == 1) {
-//                    Log.d(TAG, response.body().getIconResult().toString());
                     assert response.body() != null;
-                    iconsResults = response.body().getIconResult();
-                    assert response.body() != null;
-                    totalPages = response.body().getTotalPages();
+                    iconsResults = response.body().getIcons();
 
                     iconsAdapter = new IconsAdapter(iconsResults, new IconClickListener() {
                         @Override
@@ -107,7 +91,7 @@ public class IconsActivity extends AppCompatActivity {
                     recyclerView.setAdapter(iconsAdapter);
                 } else {
                     assert response.body() != null;
-                    List<Icon> icons = response.body().getIconResult();
+                    List<Icon> icons = response.body().getIcons();
                     for(Icon icon : icons){
                         iconsResults.add(icon);
                         iconsAdapter.notifyItemInserted(iconsResults.size() - 1);
@@ -117,7 +101,7 @@ public class IconsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(@NonNull Call<IconPageResult> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<ResponseResult> call, @NonNull Throwable t) {
                 Toast.makeText(IconsActivity.this, R.string.something_went_wrong, Toast.LENGTH_SHORT).show();
             }
         });

@@ -1,6 +1,7 @@
 package fr.mds.theverbproject.utils;
 
 import fr.mds.theverbproject.model.IconPageResult;
+import fr.mds.theverbproject.model.ResponseResult;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -18,5 +19,5 @@ public interface GetIconDataService {
     Call<IconPageResult> getPopularMovies(@Query("page") int page, @Query("api_key") String userkey);
 
     @GET("icons/{term}")
-    Call<IconPageResult> getIconsByTerm(@Path("term") String term);
+    Call<ResponseResult> getIconsByTerm(@Path("term") String term);
 }
