@@ -57,4 +57,5 @@ dependencies {
     implementation 'se.akerfeldt:okhttp-signpost:1.1.0'
     implementation 'com.squareup.okhttp3:okhttp:3.0.0-RC1'
     implementation 'oauth.signpost:signpost-core:1.2.1.2'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
 }
