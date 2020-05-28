@@ -1,10 +1,18 @@
 package fr.mds.theverbproject.model;
 
-public class User {
+import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
+public class User implements Serializable {
+
+    @SerializedName("location")
     private String location;
+    @SerializedName("name")
     private String name;
+    @SerializedName("permalink")
     private String permalink;
+    @SerializedName("username")
     private String username;
 
     public User(String location, String name, String permalink, String username) {
