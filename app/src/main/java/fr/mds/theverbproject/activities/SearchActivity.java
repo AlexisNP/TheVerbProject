@@ -47,9 +47,7 @@ public class SearchActivity extends AppCompatActivity {
 
         // Init
         rv_icons = findViewById(R.id.rv_icons);
-        rv_collections = findViewById(R.id.rv_collections);
         btn_icons = findViewById(R.id.btn_icons);
-        btn_collections = findViewById(R.id.btn_collections);
 
         btn_icons.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -59,18 +57,6 @@ public class SearchActivity extends AppCompatActivity {
 
                 ViewGroup.LayoutParams lp_collections = rv_collections.getLayoutParams();
                 lp_collections.height=0;
-                rv_collections.setLayoutParams(lp_collections);
-            }
-        });
-
-        btn_collections.setOnClickListener(new Button.OnClickListener() {
-            public void onClick(View v) {
-                ViewGroup.LayoutParams lp_icons = rv_icons.getLayoutParams();
-                lp_icons.height= 0;
-                rv_icons.setLayoutParams(lp_icons);
-
-                ViewGroup.LayoutParams lp_collections = rv_collections.getLayoutParams();
-                lp_collections.height= ViewGroup.LayoutParams.WRAP_CONTENT;
                 rv_collections.setLayoutParams(lp_collections);
             }
         });
