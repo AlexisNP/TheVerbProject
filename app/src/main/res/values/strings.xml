@@ -2,11 +2,9 @@
     <!-- GLOBAL STRINGS -->
     <string name="app_name">The Verb Project</string>
     <string name="search_placeholder">Search</string>
-    <string-array name="app_nav_bottom">
-        <item>Search</item>
-        <item>My collections</item>
-        <item>Profile</item>
-    </string-array>
+    <string name="app_nav_bottom_search">Search</string>
+    <string name="app_nav_bottom_favourite">Favourites</string>
+    <string name="app_nav_bottom_profile">Profile</string>
 
     <!-- ICONS -->
     <string name="icons_title">Icons</string>
