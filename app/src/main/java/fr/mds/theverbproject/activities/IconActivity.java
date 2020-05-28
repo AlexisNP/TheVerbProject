@@ -1,7 +1,5 @@
 package fr.mds.theverbproject.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -11,7 +9,9 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import fr.mds.theverbproject.R;
+import fr.mds.theverbproject.model.Icon;
 
 public class IconActivity extends AppCompatActivity {
 
@@ -25,6 +25,8 @@ public class IconActivity extends AppCompatActivity {
     private SeekBar sb_image_size;
     private Button btn_icon_download;
     private Button btn_icon_favorite;
+
+    private Icon icon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,10 @@ public class IconActivity extends AppCompatActivity {
 
         // Scales icon to a native 400dp * 400dp format
         scaleIcon(iv_icon, 400, 400);
+
+//        Intent intent = getIntent();
+//        Bundle bundle = intent.getExtras();
+//        icon = (Icon) bundle.getSerializable("icon");
 
         sb_image_size.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             // Changes the size of the icon

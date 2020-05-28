@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
         main_allIcons = findViewById(R.id.main_allIcons);
         main_singleIcon = findViewById(R.id.main_singleIcon);
         main_profile = findViewById(R.id.main_profile);
-
-
     }
 
     public void startCollectionsActivity (View v) {
