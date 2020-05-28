@@ -17,6 +17,7 @@ public class IconActivity extends AppCompatActivity {
 
     private static final String TAG = "IconActivity";
 
+    private Object source_image;
     private TextView tv_created_by;
     private TextView tv_collection_name;
     private ImageView iv_icon;
@@ -63,7 +64,11 @@ public class IconActivity extends AppCompatActivity {
         btn_icon_download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "Downloaded");
+                new Thread(new Runnable() {
+                    public void run() {
+                        Log.d(TAG, "DOWNLOAD");
+                    }
+                }).start();
             }
         });
 
