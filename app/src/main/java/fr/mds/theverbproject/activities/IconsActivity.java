@@ -81,7 +81,7 @@ public class IconsActivity extends AppCompatActivity {
                     iconsAdapter = new IconsAdapter(iconsResults, new IconClickListener() {
                         @Override
                         public void onIconClick(Icon icon) {
-                            Intent intent = new Intent(IconsActivity.this, IconsActivity.class);
+                            Intent intent = new Intent(IconsActivity.this, IconActivity.class);
                             Bundle bundle = new Bundle();
                             bundle.putSerializable("icon", icon);
                             intent.putExtras(bundle);
