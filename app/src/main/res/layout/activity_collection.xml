@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="By UserName"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +44,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:padding="16dp"
-            tools:itemCount="30"
+            tools:itemCount="20"
             tools:layoutManager="GridLayoutManager"
             tools:listitem="@layout/recycler_view_item"
             tools:spanCount="5" />
