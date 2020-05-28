@@ -1,25 +1,24 @@
 package fr.mds.theverbproject.utils;
 
-import fr.mds.theverbproject.model.Collection;
+import fr.mds.theverbproject.model.ResponseCollectionResult;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-import retrofit2.http.Query;
 
 public interface GetCollectionDataService {
 
     @GET("collection/{id}/icons")
-    Call<Collection> getCollectionIconsById(@Path("id") int movieId, @Query("api_key") String userkey);
+    Call<ResponseCollectionResult> getCollectionIconsById(@Path("id") int id);
 
     @GET("collection/{slug}/icons")
-    Call<Collection> getCollectionIconsBySlug(@Path("slug") String term, @Query("api_key") String userkey);
+    Call<ResponseCollectionResult> getCollectionIconsBySlug(@Path("slug") String slug);
 
     @GET("collection/{id}")
-    Call<Collection> getCollectionById(@Path("id") int page, @Query("api_key") String userkey);
+    Call<ResponseCollectionResult> getCollectionById(@Path("id") int id);
 
     @GET("collection/{slug}")
-    Call<Collection> getCollectionBySlug(@Path("slug") int page, @Query("api_key") String userkey);
+    Call<ResponseCollectionResult> getCollectionBySlug(@Path("slug") String slug);
 
-    @GET("collections/{slug}")
-    Call<Collection> getAllCollections(@Path("slug") int page, @Query("api_key") String userkey);
+    @GET("collections")
+    Call<ResponseCollectionResult> getAllCollections();
 }

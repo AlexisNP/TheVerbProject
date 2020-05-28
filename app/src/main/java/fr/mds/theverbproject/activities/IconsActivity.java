@@ -22,7 +22,7 @@ import butterknife.OnClick;
 import fr.mds.theverbproject.R;
 import fr.mds.theverbproject.adapter.IconsAdapter;
 import fr.mds.theverbproject.model.Icon;
-import fr.mds.theverbproject.model.ResponseResult;
+import fr.mds.theverbproject.model.ResponseIconResult;
 import fr.mds.theverbproject.utils.GetIconDataService;
 import fr.mds.theverbproject.utils.IconClickListener;
 import fr.mds.theverbproject.utils.RetrofitInstance;
@@ -34,7 +34,7 @@ public class IconsActivity extends AppCompatActivity {
 
     private static final int FIRST_PAGE = 1;
     private static final String TAG = "iconsActivity";
-    private Call<ResponseResult> call;
+    private Call<ResponseIconResult> call;
     private List<Icon> iconsResults;
     private IconsAdapter iconsAdapter;
 
@@ -70,9 +70,9 @@ public class IconsActivity extends AppCompatActivity {
 
         call = iconDataService.getIconsByTerm("zombie");
 
-        call.enqueue(new Callback<ResponseResult>() {
+        call.enqueue(new Callback<ResponseIconResult>() {
             @Override
-            public void onResponse(@NonNull Call<ResponseResult> call, @NonNull Response<ResponseResult> response) {
+            public void onResponse(@NonNull Call<ResponseIconResult> call, @NonNull Response<ResponseIconResult> response) {
 
                 if(page == 1) {
                     assert response.body() != null;
@@ -101,7 +101,7 @@ public class IconsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(@NonNull Call<ResponseResult> call, @NonNull Throwable t) {
+            public void onFailure(@NonNull Call<ResponseIconResult> call, @NonNull Throwable t) {
                 Toast.makeText(IconsActivity.this, R.string.something_went_wrong, Toast.LENGTH_SHORT).show();
             }
         });
