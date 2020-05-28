@@ -24,5 +24,9 @@
     <style name="tertiary_btn" parent="btn">
         <item name="android:backgroundTint">@color/primary_gray</item>
     </style>
+    <style name="navbar_button" parent="btn">
+        <item name="android:background">@drawable/navbar_btn</item>
+        <item name="android:backgroundTint">@color/black</item>
+    </style>
 
 </resources>
