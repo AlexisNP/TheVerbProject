@@ -1,5 +1,6 @@
 package fr.mds.theverbproject.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import androidx.appcompat.app.AppCompatActivity;
 import fr.mds.theverbproject.R;
@@ -48,9 +51,11 @@ public class IconActivity extends AppCompatActivity {
         // Scales icon to a native 400dp * 400dp format
         scaleIcon(iv_icon, 400, 400);
 
-//        Intent intent = getIntent();
-//        Bundle bundle = intent.getExtras();
-//        icon = (Icon) bundle.getSerializable("icon");
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        icon = (Icon) bundle.getSerializable("icon");
+
+        populateActivity(icon);
 
         sb_image_size.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             // Changes the size of the icon
@@ -84,6 +89,12 @@ public class IconActivity extends AppCompatActivity {
                 Log.d(TAG, "Favourite");
             }
         });
+    }
+
+    private void populateActivity(Icon icon){
+        Picasso.with(this).load(icon.getPreview_url()).into(iv_icon);
+        tv_created_by.setText(icon.getUploader().getName());
+//        tv_collection_name.setText(icon.getCollections().getClass().getName());
     }
 
     public void scaleIcon(ImageView img, double width, double height) {

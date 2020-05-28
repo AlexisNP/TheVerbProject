@@ -1,8 +1,14 @@
 package fr.mds.theverbproject.model;
 
-public class Tag {
+import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
+public class Tag implements Serializable {
+
+    @SerializedName("id")
     private Double id;
+    @SerializedName("slug")
     private String slug;
 
     public Tag(Double id, String slug) {
