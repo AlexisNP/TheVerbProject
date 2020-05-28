@@ -125,6 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_weight="1"
+                android:onClick="onDownload"
                 android:text="@string/btn_download_icon" />
 
             <Button
@@ -134,6 +135,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
+                android:onClick="onFavourite"
                 android:text="@string/btn_save_to_favorites" />
         </LinearLayout>
 
