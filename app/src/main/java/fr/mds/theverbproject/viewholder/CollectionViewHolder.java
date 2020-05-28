@@ -11,32 +11,32 @@ import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import fr.mds.theverbproject.R;
-import fr.mds.theverbproject.model.Icon;
-import fr.mds.theverbproject.utils.IconClickListener;
+import fr.mds.theverbproject.model.Collection;
+import fr.mds.theverbproject.utils.CollectionClickListener;
 
 import static fr.mds.theverbproject.activities.IconsActivity.getMeasuredPosterHeight;
 import static fr.mds.theverbproject.activities.IconsActivity.getScreenWidth;
 import static fr.mds.theverbproject.activities.IconsActivity.iconImagePathBuilder;
 
-public class IconViewHolder extends RecyclerView.ViewHolder {
+public class CollectionViewHolder extends RecyclerView.ViewHolder {
 
-    @BindView(R.id.iv_icon_poster) ImageView mIconPoster;
-    @BindView(R.id.cv_icon_card) CardView mIconCard;
+    @BindView(R.id.iv_collection_poster) ImageView mIconPoster;
+    @BindView(R.id.cv_collection_card) CardView mIconCard;
 
-    public IconViewHolder(final View itemView) {
+    public CollectionViewHolder(final View itemView) {
         super(itemView);
         ButterKnife.bind(this, itemView);
     }
 
-    public void bind(final Icon icon, final IconClickListener iconClickListener) {
+    public void bind(final Collection collection, final CollectionClickListener collectionClickListener) {
         mIconCard.setLayoutParams(new ViewGroup.LayoutParams(getScreenWidth()/2, getMeasuredPosterHeight(getScreenWidth()/2)));
 
-        Picasso.with(mIconPoster.getContext()).load(iconImagePathBuilder(icon.getId())).placeholder(R.drawable.placeholder).fit().centerCrop().into(mIconPoster);
+        Picasso.with(mIconPoster.getContext()).load(iconImagePathBuilder(collection.getId())).placeholder(R.drawable.placeholder).fit().centerCrop().into(mIconPoster);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                iconClickListener.onIconClick(icon);
+                collectionClickListener.onIconClick(collection);
             }
         });
     }
