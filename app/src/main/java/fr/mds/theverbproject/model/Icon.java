@@ -1,32 +1,59 @@
 package fr.mds.theverbproject.model;
 
+import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 import java.util.Set;
 
-public class Icon {
+public class Icon implements Serializable {
 
+    @SerializedName("attribution")
     private String attribution;
+    @SerializedName("attribution_p")
     private String attribution_preview_url;
+    @SerializedName("coll")
     private Set<Collection> collections;
+    @SerializedName("date_uploaded")
     private String date_uploaded;
+    @SerializedName("id")
     private String id;
+    @SerializedName("is_active")
     private String is_active;
+    @SerializedName("is_explicit")
     private String is_explicit;
+    @SerializedName("license_descr")
     private String license_description;
+    @SerializedName("nounji_free")
     private String nounji_free;
+    @SerializedName("permalink")
     private String permalink;
+    @SerializedName("preview_url")
     private String preview_url;
+    @SerializedName("preview_url_4")
     private String preview_url_42;
+    @SerializedName("preview_url_8")
     private String preview_url_84;
+//  @SerializedName("sponsor")
 //  "sponsor": {},
+    @SerializedName("sponsor_campa")
     private String sponsor_campaign_link;
+    @SerializedName("sponsor_id")
     private String sponsor_id;
+    @SerializedName("tags")
     private Set<Tag> tags;
+    @SerializedName("term")
     private String term;
+    @SerializedName("term_id")
     private String term_id;
+    @SerializedName("term_slug")
     private String term_slug;
+    @SerializedName("updated_at")
     private String updated_at;
+    @SerializedName("uploader")
     private User uploader;
+    @SerializedName("uploader_id")
     private String uploader_id;
+    @SerializedName("year")
     private int year;
 
     public Icon(String attribution, String attribution_preview_url, Set<Collection> collections,
