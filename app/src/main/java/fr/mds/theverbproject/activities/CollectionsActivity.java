@@ -13,5 +13,6 @@ public class CollectionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collections);
         setTitle("Search - Collections");
+
     }
 }
