@@ -1,13 +1,12 @@
 package fr.mds.theverbproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import fr.mds.theverbproject.R;
+import androidx.appcompat.app.AppCompatActivity;
 import fr.mds.theverbproject.activities.CollectionActivity;
 import fr.mds.theverbproject.activities.CollectionsActivity;
 import fr.mds.theverbproject.activities.IconActivity;
@@ -32,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
         main_allIcons = findViewById(R.id.main_allIcons);
         main_singleIcon = findViewById(R.id.main_singleIcon);
         main_profile = findViewById(R.id.main_profile);
+
+
     }
 
     public void startCollectionsActivity (View v) {
