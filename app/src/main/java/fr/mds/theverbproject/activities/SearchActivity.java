@@ -3,19 +3,14 @@ package fr.mds.theverbproject.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import fr.mds.theverbproject.MainActivity;
 import fr.mds.theverbproject.R;
 
-public class CollectionsActivity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {
 
     private Button btn_icons;
     private Button btn_collections;
@@ -25,7 +20,7 @@ public class CollectionsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_collections);
+        setContentView(R.layout.activity_search);
         setTitle("Search - Collections");
 
         // Init

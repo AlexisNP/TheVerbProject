@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.mds.theverbproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activities.CollectionActivity" />
         <activity android:name=".activities.IconActivity" />
-        <activity android:name=".activities.CollectionsActivity" />
+        <activity android:name=".activities.SearchActivity" />
         <activity android:name=".activities.IconsActivity" />
         <activity android:name=".activities.ProfileActivity" />
         <activity android:name=".MainActivity">
@@ -22,5 +24,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>
